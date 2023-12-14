@@ -1,0 +1,13 @@
+<div class="content">
+    <div class="wishlistdiv">
+        <h3 class="wishlist">My Order</h3>
+    </div>
+    <div class="list" *ngFor="let book of bookListarray">
+        <img src="{{book.book.image}}" alt="book" class="image">
+        <div class="bookdetails">
+            <div class="name">{{book.book.bookname}}</div>
+            <div class="author">by {{book.book.bookAuthor}}</div>
+            <div class="price">Rs.{{book.book.bookPrice}} <s class="author">{{book.book.bookPrice+500}}</s></div>
+        </div>
+    </div>
+</div>

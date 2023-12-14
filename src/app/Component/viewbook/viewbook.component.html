@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="sub">
+        <div class="bookimage">
+            <img style="height: 300px; width: 250px;"
+            src="{{book?.image}}"
+            alt="Book"
+            >
+            <div class="split">
+                <div class="cartadd">
+                    <button class="but" color="primary" style="padding:10px;border:1px solid black;width: 120px; background-color:#A03037;color: white;" (click)='cartClick(book.bookId)'>Add to cart</button> &nbsp;&nbsp;
+                </div>
+                <div class="cartadd">
+                    <button class="but" color="primary" style="padding:10px;border:1px solid black;width:120px; background-color:rgba(32, 24, 24, 0.829); color: white;" (click)='wishlistClick(book.bookId)'>Wishlist</button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="title" >
+                {{ book?.bookname }}
+              </div>
+              <div class="desc" style="padding-bottom: 5px;">
+                by {{ book?.bookAuthor }}
+              </div>
+              <div class="rating" >
+                {{ book?.rating }} <mat-icon style="font-size: 10px; height: 10px;width: 10px;">star</mat-icon>
+              </div>
+              <div class="price" style="font-size: large; padding-top: 5px; font-weight: 500; padding-bottom: 5px;">
+                Rs.{{ book?.bookPrice }}
+              </div>
+              <hr color="black">
+              <div class="bookdesc" style="padding-top: 10px; padding-bottom: 10px;">
+                  {{book?.bookDescription}}
+              </div>
+              <hr color="black">
+              <h2>Customer Feedback</h2>
+              <div class="feedback">
+                  Overall rating
+                  <div class="ratestar" style="display: flex; flex-direction: row; align-items: center; padding-top: 5px;padding-bottom: 5px;">
+                <span *ngFor="let star of stars; let i = index" (click)="rateBook(i + 1)">
+                    <i class="material-icons icon">{{ star ? 'star' : 'star_border' }}</i>
+                </span>
+            </div>
+              <div class="feedbackinput">
+                <textarea type="text" placeholder="Write your review" class="descriptionTextArea" (input)="expandTextarea()"
+                [(ngModel)]="description"
+                style="width: 100%; border: 0px; height: 60px; padding: 0px;  font-size:16px;"></textarea>
+              </div>
+              <div class="submit" style="display: flex; align-self: flex-end;">
+                <button color="primary" style="width: 70px; padding:7px; background-color:lightgray; border:1px solid black; " (click)='onSubmit()'>Submit</button>
+              </div>
+              </div>
+              <div class="feedbacks" *ngFor="let feed of feedback">
+                  <div class="username" style="font-size: large; font-weight: 500;padding-bottom: 5px;">
+                <mat-icon style="margin-bottom: -4px;  color: grey; ">account_circle</mat-icon>  {{ feed?.user.name }}
+                  </div>
+                  <div class="ratestar" style="display: flex; flex-direction: row; align-items: flex-start;">
+                    <span *ngFor="let star of getStarsFromRating(feed.rating); let i = index">
+                        <i class="material-icons icon">{{ star ? 'star' : 'star_border' }}</i>
+                    </span>
+                  </div>
+                  <div class="feeddesc" style="padding-bottom: 30px;">
+                  {{ feed?.description }}
+              </div>
+        </div>
+    </div>
+</div>
+</div>

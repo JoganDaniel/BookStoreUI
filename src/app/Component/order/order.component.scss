@@ -1,0 +1,68 @@
+
+.content{
+    border: 1px solid #E4E4E4;
+    width:70%;
+    height: auto;
+    position: relative;
+    left: 15%;
+    top: 20px;
+    margin-top: 10%;
+}
+.wishlistdiv{
+    background-color: #e0e0e0;
+    padding-top: 10px;
+    padding-bottom: 7px;
+}
+.wishlist{
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: x-large;
+}
+.list{
+//    margin-top: 10%;
+    display: flex;
+    height: fit-content;
+}
+.image{
+    height: 100px;
+    width: 140px;
+    margin: 20px;
+}
+.bookdetails{
+    height:100px;
+    width: 500px;;
+    position: relative;
+    top: 25px;
+    left: 10px;
+}
+.price{
+    font-weight: 500;
+}
+.name{
+    font-size: medium;
+    color: black;
+    font-weight: 600;
+}
+.author{
+  color:grey;
+  font-size: smaller;
+  font-weight: normal;
+}
+.zz
+{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.delete{
+
+    color:  #9D9D9D;
+    font-size: large;
+    position: relative;
+    top: 30px;
+    margin-right: 10%;
+}
+.delete:hover
+{
+    cursor: pointer;
+}

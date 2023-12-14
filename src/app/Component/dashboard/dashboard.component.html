@@ -1,0 +1,29 @@
+
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="example-toolbar">
+      
+      <h1 class="example-app-name">
+        <mat-icon class="bookiconbutton" style="margin-bottom: -4px;" (click)='homeClick()'>menu_book</mat-icon>
+        Book Store
+      </h1>
+      <mat-form-field class="search">
+          <mat-icon matSuffix>search</mat-icon>
+          <input type="text" matInput placeholder="Search" (keyup)="searchNotes($event)">
+      </mat-form-field>
+      <div class="icons">
+        <button  mat-icon-button (click)="accountClick()" class="hov">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+      <button mat-icon-button (click)="wishlistClick()" class="hov">
+          <mat-icon>favorite</mat-icon>
+      </button>
+          <button mat-icon-button (click)="cartClick()" class="hov">
+              <mat-icon >shopping_cart</mat-icon>
+          </button>
+          
+      </div>
+  </mat-toolbar>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

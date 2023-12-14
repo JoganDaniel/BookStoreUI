@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="sub">
+    <div class="imageframe">
+        <div class="image">
+        <img style="height: 220px; width: 220px; border-radius: 50% 50%;"
+          src="http://res.cloudinary.com/din6haoa4/image/upload/v1702154774/jgun5otgj4ds2qtxpu4y.jpg"
+          alt="Fundoo login"
+          class="img"
+        />
+      </div>
+      <div style="background-color: white; font-weight: 500; font-size: 20px;">Online Book Shopping</div>
+      </div>
+
+      <div class="content">
+    <mat-tab-group class="tab-main" mat-stretch-tabs="false" mat-align-tabs="center" (selectedTabChange)="onTabChange($event)">
+    <mat-tab label="SIGN UP"><app-register></app-register></mat-tab>
+    <mat-tab label="LOGIN"><app-login></app-login></mat-tab>
+  </mat-tab-group>
+  </div>
+  </div>
+  </div>

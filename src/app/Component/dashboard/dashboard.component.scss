@@ -1,0 +1,57 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.bookiconbutton:hover
+{
+cursor: pointer;
+}
+.example-toolbar {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #A03037;
+}
+
+h1.example-app-name {
+  margin-left: 5px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.example-sidenav-container {
+  flex: 1;
+}
+.sidenavwidthadjust
+{
+  width: 18%;
+}
+
+.example-is-mobile .example-sidenav-container {
+  flex: 1 0 auto;
+}
+.search {
+  padding-left: 100px;
+  padding-top: 22px;
+  width: 600px;
+  height: 75px;
+  align-items: center;
+  justify-content: center;
+}
+.icons{
+  height: auto;
+  width: auto;
+  color: white;
+}
+
+.hov:hover
+{
+  color:lightgreen;
+}

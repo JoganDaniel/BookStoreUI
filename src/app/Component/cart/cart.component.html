@@ -1,0 +1,84 @@
+<div class="main">
+    <div class="content">
+        <div class="cartdiv">
+            <h3 class="cart">My Cart</h3>
+        </div>
+        <div class="list" *ngFor="let book of bookListarray">
+            <div>
+            <img src="{{book.book.image}}" alt="book" class="image"></div>
+            <div class="det" style="display:flex;flex-direction: column;">
+            <div class="bookdetails">
+                <div class="name">{{book.book.bookname}}</div>
+                <div class="author">by {{book.book.bookAuthor}}</div>
+                <div class="price">Rs.{{book.book.bookPrice}} <s class="author">{{book.book.bookPrice+500}}</s></div>
+            </div>
+        
+        <div class="countdiv">
+            <button color="primary" class="minus" (click)='minusClick()'>-</button>
+            <span class="count">{{count}}</span>
+            <button color="primary" class="plus" (click)='plusClick()'>+</button>
+            <button mat-flat-button appearance="outline" class="remove">Delete</button>
+        </div>
+    </div>
+    </div>
+        <div class="placeorder">
+            <div>
+            <button mat-flat-button class="button" appearance="outline" (click)=placeOrder()>PLACE ORDER</button>
+        </div>
+        </div>
+    </div>
+    <div>
+        <mat-expansion-panel hideToggle class="addressdetails" [expanded]="isAddressDetailsExpanded">
+            <mat-expansion-panel-header>
+                <mat-panel-title style="font-weight: 600; font-size: large;">
+                    Address Details
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="addnew">
+                <button class="addbutt" style="border: none; background-color: white;">Add New Address</button>
+            </div> 
+            <div class="labels">
+                <label>Full Name</label>
+                <label>Mobile Number</label>
+            </div>
+            <div class="inputs">
+                <input class="input">
+                <input class="input">
+            </div>
+            <label class="labels">Address</label>
+            <div>
+                <input class="address">
+            </div>
+            <div class="labels">
+                <label>City/Town</label>
+                <label>State</label>
+            </div>
+            <div class="inputs">
+                <input class="input">
+                <input class="input">
+            </div>
+       
+            <button mat-flat-button class="continue" appearance="outline" (click)='onContinueClick()'>CONTINUE</button>
+        </mat-expansion-panel>
+    </div>
+    <div>
+        <mat-expansion-panel hideToggle class="ordersummary" [expanded]="isSummaryExpanded">
+            <mat-expansion-panel-header>
+                <mat-panel-title style="font-weight: 600; font-size: large;">
+                    Order Summary
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="bottomlist">
+                <img src="" alt="image" class="image">
+                <div class="bookdetails">
+                    <div class="name">Dont Make Me Think</div>
+                    <div class="author">by Steve krug</div>
+                    <div class="price">Rs.1500 <s class="author">Rs.2000</s></div>
+                </div>
+            </div>
+            <div>
+                <button mat-flat-button class="checkout" appearance="outline">CHECKOUT</button>
+            </div>
+        </mat-expansion-panel>
+    </div>
+</div>

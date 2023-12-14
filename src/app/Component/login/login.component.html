@@ -1,0 +1,32 @@
+<div class="container">
+  
+  <div class="sub">
+    <div class="field">
+             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+   
+      <div class="input">
+        <input type="email" placeholder="Email" formControlName="email" class="textfield" required/>
+
+      </div>
+      <div class="input">
+          <input type="password" placeholder="Password" formControlName="password" class="textfield" required />
+
+      </div>
+      <div class="forgot">
+      <a style="font-size: small;" routerLink="/forgotpassword">Forgot password?</a>
+      </div>
+      <div class="foot">
+
+        <div class="submit input">
+          <button mat-raised-button color="primary" style="width: 100%; background-color:#A03037">Login</button>
+        </div>
+      </div>
+    </form>
+    </div>
+    OR
+    <div class="foot2">
+      <button mat-raised-button color="primary" style="width: 50%; background-color:blue">FaceBook</button> &nbsp;&nbsp;
+      <button mat-raised-button color="primary" style="width:50%; background-color:whitesmoke; color: black;">Google</button>
+    </div>
+  </div>
+</div>

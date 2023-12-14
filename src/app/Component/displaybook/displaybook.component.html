@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="sub" *ngFor="let book of bookListarray" (click)="openDialog(book)">
+        <div class="image" >
+            <img style="height: 150px; width: 130px;"
+          src="{{book?.image}}"
+          alt="Book"
+          class="img"
+        />
+        </div>
+        <div class="details">
+      <div class="title">
+        {{ book?.bookname }}
+      </div>
+      <div class="desc">
+         by {{ book?.bookAuthor }}
+      </div>
+      <div class="rating">
+        {{ book?.rating }}
+        <mat-icon style="font-size: 10px; height: 10px;width: 10px;">star</mat-icon>
+      </div>
+      <div class="price">
+        Rs. {{ book?.bookPrice }}
+      </div>
+    </div>
+    </div>
+  </div>
+  

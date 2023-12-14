@@ -1,0 +1,36 @@
+<div class="container">
+  
+    <div class="sub">
+      <div class="field">
+               <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" style="height: 80%;">
+        <div class="input">
+          
+          <input type="text" placeholder="Full Name" formControlName="firstname" class="textfield" required/>
+    
+        </div>
+        <div class="input">
+          <input type="text" placeholder="Mobile" formControlName="phonenumber" class="textfield" required />
+
+        </div>
+        <div class="input">
+          <input type="email" placeholder="Email" formControlName="email" class="textfield" required/>
+
+        </div>
+  
+        <div class="input">
+            <input type="password" placeholder="Password" formControlName="password" class="textfield" required />
+
+        </div>
+        <div class="foot">
+          <!-- <div class="login input">
+            <a routerLink="/login">Login instead </a>
+          </div> -->
+          <div class="submit input">
+            <button mat-raised-button color="primary" style="width: 100%; background-color:#A03037">Register</button>
+          </div>
+        </div>
+      </form>
+      </div>
+
+    </div>
+</div>
