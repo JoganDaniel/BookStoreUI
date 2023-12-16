@@ -10,7 +10,8 @@
             <div class="price">Rs.{{book.book.bookPrice}} <s class="author">{{book.book.bookPrice+500}}</s></div>
         </div>
         <div class="zz">
-        <mat-icon class="delete">delete</mat-icon>
+        <mat-icon class="cartadd" (click)="addcartClicked(book.bookId,book.wishlistId)">add_shopping_cart</mat-icon>    
+        <mat-icon class="delete" (click)="deleteClicked(book.wishlistId)">delete</mat-icon>
         </div>
     </div>
 </div>

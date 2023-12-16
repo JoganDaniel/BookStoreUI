@@ -1,68 +1,53 @@
-
-.content{
-    border: 1px solid #E4E4E4;
-    width:70%;
-    height: auto;
-    position: relative;
-    left: 15%;
-    top: 20px;
-    margin-top: 10%;
-}
-.wishlistdiv{
-    background-color: #e0e0e0;
-    padding-top: 10px;
-    padding-bottom: 7px;
-}
-.wishlist{
-    margin-left: 20px;
-    font-weight: bold;
-    font-size: x-large;
-}
-.list{
-//    margin-top: 10%;
+.container {
+    margin-top: 7%;
     display: flex;
-    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.image{
-    height: 100px;
-    width: 140px;
-    margin: 20px;
-}
-.bookdetails{
-    height:100px;
-    width: 500px;;
-    position: relative;
-    top: 25px;
-    left: 10px;
-}
-.price{
-    font-weight: 500;
-}
-.name{
-    font-size: medium;
-    color: black;
-    font-weight: 600;
-}
-.author{
-  color:grey;
-  font-size: smaller;
-  font-weight: normal;
-}
-.zz
-{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-}
-.delete{
 
-    color:  #9D9D9D;
-    font-size: large;
+
+.image {
+    height: 230px;
+    width: 250px;
     position: relative;
-    top: 30px;
-    margin-right: 10%;
+    // left: 500px;
 }
-.delete:hover
-{
-    cursor: pointer;
+
+.para {
+    width: 400px;
+    position: relative;
+    // left: 460px;
+    text-align: center;
+}
+
+.table {
+    border: 1px solid #DCDCDC;
+    width: 800px;
+    position: relative;
+    // left: 200px;
+    top: 40px;
+}
+
+.thead {
+    background-color: #FAFAFA;
+}
+
+td {
+    border: 1px solid #DCDCDC;
+    min-width: 300px;
+    text-align: center;
+}
+
+.continue {
+    background-color: #3371B5;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    opacity: 1;
+    height: 30px;
+    width: 160px;
+    position: relative;
+    top: 70px;
+    // left: 570px;
 }

@@ -179,6 +179,7 @@
 }
 .bottomlist{
     display: flex;
+    flex-direction: column;
     height: fit-content;
     position: relative;
     right:20px;
@@ -219,4 +220,9 @@
     position: relative;
     left: 750px;
     bottom: 30px;
+}
+.label2
+{
+    font-size: medium;
+    font-weight: 550;
 }

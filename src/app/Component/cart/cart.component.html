@@ -3,6 +3,7 @@
         <div class="cartdiv">
             <h3 class="cart">My Cart</h3>
         </div>
+        
         <div class="list" *ngFor="let book of bookListarray">
             <div>
             <img src="{{book.book.image}}" alt="book" class="image"></div>
@@ -14,10 +15,10 @@
             </div>
         
         <div class="countdiv">
-            <button color="primary" class="minus" (click)='minusClick()'>-</button>
-            <span class="count">{{count}}</span>
-            <button color="primary" class="plus" (click)='plusClick()'>+</button>
-            <button mat-flat-button appearance="outline" class="remove">Delete</button>
+            <button color="primary" class="minus" (click)='minusClick(book.cartId,book.bookCount)'>-</button>
+            <span class="count">{{book.bookCount}}</span>
+            <button color="primary" class="plus" (click)='plusClick(book.cartId,book.bookCount)'>+</button>
+            <button mat-flat-button appearance="outline" class="remove" (click)="onDelete(book.cartId)">Delete</button>
         </div>
     </div>
     </div>
@@ -35,29 +36,42 @@
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <div class="addnew">
-                <button class="addbutt" style="border: none; background-color: white;">Add New Address</button>
+                <button class="addbutt" style="border: none; background-color: white;" (click)='addAddress()'>Add New Address</button>
             </div> 
-            <div class="labels">
-                <label>Full Name</label>
-                <label>Mobile Number</label>
-            </div>
-            <div class="inputs">
-                <input class="input">
-                <input class="input">
-            </div>
-            <label class="labels">Address</label>
-            <div>
-                <input class="address">
-            </div>
-            <div class="labels">
-                <label>City/Town</label>
-                <label>State</label>
-            </div>
-            <div class="inputs">
-                <input class="input">
-                <input class="input">
-            </div>
-       
+            <div style="padding-bottom: 5%;" *ngFor="let address of customerList; let i = index">
+                <div class="radio" style="width: fit-content; font-size: large; font-weight: 600; font-style: italic;">
+                    <input type="radio" [(ngModel)]="selectedAddress" [value]="address">Address {{i+1}}
+                  </div>
+                <div class="labels">
+                  <label class="label2">Full Name</label>
+                  <label class="label2">Mobile Number</label>
+                </div>
+                <div class="inputs">
+                  <input class="input" [(ngModel)]="address.customerName">
+                  <input class="input" [(ngModel)]="address.phone">
+                </div>
+                
+                <div class="labels">
+                  <label  class="label2">City</label>
+                  <label class="label2">State</label>
+                </div>
+                <div class="inputs">
+                  <input class="input" [(ngModel)]="address.city">
+                  <input class="input" [(ngModel)]="address.state">
+                </div>
+                <label class="labels label2">Address</label>
+                <div>
+                  <input class="address" [(ngModel)]="address.address">
+                </div>
+                <div class="labels">
+                    <label class="label2">Type</label>
+                  </div>
+                  <div class="inputs">
+                    <select class="input" [(ngModel)]="address.type.typeName">
+                      <option *ngFor="let option of typeOptions" [value]="option">{{ option }}</option>
+                    </select>
+                  </div>
+       </div>
             <button mat-flat-button class="continue" appearance="outline" (click)='onContinueClick()'>CONTINUE</button>
         </mat-expansion-panel>
     </div>
@@ -69,15 +83,20 @@
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <div class="bottomlist">
-                <img src="" alt="image" class="image">
-                <div class="bookdetails">
-                    <div class="name">Dont Make Me Think</div>
-                    <div class="author">by Steve krug</div>
-                    <div class="price">Rs.1500 <s class="author">Rs.2000</s></div>
-                </div>
+                <div class="list" *ngFor="let book of bookListarray">
+                    <div>
+                    <img src="{{book.book.image}}" alt="book" class="image"></div>
+                    <div class="det" style="display:flex;flex-direction: column;">
+                    <div class="bookdetails">
+                        <div class="name">{{book.book.bookname}}</div>
+                        <div class="author">by {{book.book.bookAuthor}}</div>
+                        <div class="price">Rs.{{book.book.bookPrice}} <s class="author">{{book.book.bookPrice+500}}</s></div>
+                    </div>
+            </div>
+            </div>
             </div>
             <div>
-                <button mat-flat-button class="checkout" appearance="outline">CHECKOUT</button>
+                <button mat-flat-button class="checkout" appearance="outline" (click)='checkoutClick()'>CHECKOUT</button>
             </div>
         </mat-expansion-panel>
     </div>

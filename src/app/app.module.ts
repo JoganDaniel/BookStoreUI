@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './Component/register/register.component';
 import { LoginComponent } from './Component/login/login.component';
@@ -31,7 +32,6 @@ import { WishlistComponent } from './Component/wishlist/wishlist.component';
 import { CartComponent } from './Component/cart/cart.component';
 import { OrderComponent } from './Component/order/order.component';
 import { CustomerComponent } from './Component/customer/customer.component'
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -45,4 +45,9 @@ export class DashboardComponent implements OnDestroy {
   {
     this.router.navigate(['book/displaybook'])
   }
+  LogoutClick()
+  {
+    localStorage.clear();
+    this.router.navigate(['home'])
+  }
 }

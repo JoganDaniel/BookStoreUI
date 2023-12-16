@@ -23,4 +23,22 @@ getAllWishlist()
     console.log(this.bookListarray);
   })
 }
+addcartClicked(bookid:any,wishlistid:any)
+{
+  let reqData={
+    BookId:bookid,
+    WishlistId:wishlistid
+  }
+  this.bookService.moveToCart(reqData).subscribe((response:any) => {
+    console.log(response);
+    location.reload();
+  })
+}
+deleteClicked(wishlistid:any)
+{
+  this.bookService.deleteWishlist(wishlistid).subscribe((response:any) => {
+    console.log(response);
+    location.reload();
+  })
+}
 }

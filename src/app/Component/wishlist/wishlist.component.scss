@@ -6,7 +6,7 @@
     position: relative;
     left: 15%;
     top: 20px;
-    margin-top: 10%;
+    margin-top: 7%;
 }
 .wishlistdiv{
     background-color: #e0e0e0;
@@ -57,12 +57,23 @@
 .delete{
 
     color:  #9D9D9D;
-    font-size: large;
+    font-size: x-large;
     position: relative;
     top: 30px;
     margin-right: 10%;
 }
+.cartadd
+{
+    color:  #9D9D9D;
+    font-size: x-large;
+    position: relative;
+    top: 30px;
+    padding-right: 10px;
+}
 .delete:hover
 {
+    cursor: pointer;
+}
+.cartadd:hover{
     cursor: pointer;
 }

@@ -86,5 +86,83 @@ token:any
     }
     return this.httpService.GetService('Cart/GetCart',true,httpAuthOptions)
   }
+  editCart(reqData:any)
+  {
+    this.token = localStorage.getItem('token')
+    let httpAuthOptions = {
+      headers : new HttpHeaders({
+        'Content-Type':'application/json',
+        Authorization:'Bearer '+this.token
+      })
+    }
+    return this.httpService.PutService('Cart/UpdateCart?cartid='+reqData.cartid+'&bookcount='+reqData.bookcount,{},true,httpAuthOptions)
+  }
+  deleteCart(reqData:any)
+  {
+    this.token = localStorage.getItem('token')
+    let httpAuthOptions = {
+      headers : new HttpHeaders({
+        'Content-Type':'application/json',
+        Authorization:'Bearer '+this.token
+      })
+    }
+    return this.httpService.PutService('Cart/DeleteCart?cartid='+reqData,{},true,httpAuthOptions)
+  }
+
+  addCustomer(reqdata:any)
+  {
+    this.token = localStorage.getItem('token')
+    let httpAuthOptions = {
+      headers : new HttpHeaders({
+        'Content-Type':'application/json',
+        Authorization:'Bearer '+this.token
+      })
+    }
+    return this.httpService.postService('Customer/AddCustomer',reqdata,true,httpAuthOptions)
+  }
+  getCustomer()
+  {
+    this.token = localStorage.getItem('token')
+    let httpAuthOptions = {
+      headers : new HttpHeaders({
+        'Content-Type':'application/json',
+        Authorization:'Bearer '+this.token
+      })
+    }
+    return this.httpService.GetService('Customer/GetCustomerDetails',true,httpAuthOptions)
+  }
+  orderPlaced(cid:any,cartid:any)
+  {
+    this.token = localStorage.getItem('token')
+    let httpAuthOptions = {
+      headers : new HttpHeaders({
+        'Content-Type':'application/json',
+        Authorization:'Bearer '+this.token
+      })
+    }
+    return this.httpService.postService('OrderPlaced/PlaceOrder?customerid='+cid+'&cartid='+cartid,{},true,httpAuthOptions)
+  }
+  moveToCart(reqData:any)
+  {
+    this.token = localStorage.getItem('token')
+    let httpAuthOptions = {
+      headers : new HttpHeaders({
+        'Content-Type':'application/json',
+        Authorization:'Bearer '+this.token
+      })
+    }
+    return this.httpService.PutService('WishList/MoveWishListToCart',reqData,true,httpAuthOptions)
+  }
+  deleteWishlist(reqdata:any)
+  {
+    this.token = localStorage.getItem('token')
+    let httpAuthOptions = {
+      headers : new HttpHeaders({
+        'Content-Type':'application/json',
+        Authorization:'Bearer '+this.token
+      })
+    }
+    return this.httpService.PutService('WishList/DeleteWishList?wishlistId='+reqdata,{},true,httpAuthOptions)
+  }
 }
 

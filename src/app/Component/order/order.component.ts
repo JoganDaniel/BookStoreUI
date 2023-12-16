@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -7,12 +8,15 @@ import { Component,OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit{
   bookListarray:any=[]
-  constructor()
+  constructor(private router:Router)
   {
 
   }
   ngOnInit(){
 
   }
-
+  clicked()
+  {
+    this.router.navigate(['book/displaybook'])
+  }
 }

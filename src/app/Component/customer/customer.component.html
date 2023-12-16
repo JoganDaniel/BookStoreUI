@@ -1,24 +1,38 @@
-<div class="container">
-<div class="labels">
-    <label>Full Name</label>
-    <label>Mobile Number</label>
-</div>
-<div class="inputs">
-    <input class="input">
-    <input class="input">
-</div>
-<label class="labels">Address</label>
-<div>
-    <input class="address">
-</div>
-<div class="labels">
-    <label>City/Town</label>
-    <label>State</label>
-</div>
-<div class="inputs">
-    <input class="input">
-    <input class="input">
-</div>
+<div class="container" [formGroup]="formDataForm">
+    <h2 style="font-weight: 600; padding-bottom: 20px;">Personal Details</h2>
+  
+    <div class="labels">
+      <label>Full Name</label>
+      <label>Mobile Number</label>
+    </div>
+    <div class="inputs">
+      <input class="input" formControlName="CustomerName" required>
+      <input class="input" formControlName="Phone" required>
+    </div>
+  
+    <div class="labels">
+      <label>City/Town</label>
+      <label>State</label>
+    </div>
+    <div class="inputs">
+      <input class="input" formControlName="City" required>
+      <input class="input" formControlName="State" required>
+    </div>
+  
+    <label class="labels">Address</label>
+    <div>
+      <input class="address" formControlName="Address" required>
+    </div>
+  
+    <div class="labels">
+        <label>Type</label>
+      </div>
+      <div class="inputs">
+        <select class="input" formControlName="TypeId" required>
+          <option *ngFor="let option of typeOptions" [value]="option.value">{{ option.label }}</option>
+        </select>
+      </div>
 
-<button mat-flat-button class="continue" appearance="outline" (click)='onsubClick()'>Submit</button>
-</div>
+    <button mat-flat-button class="continue" appearance="outline" (click)="onsubClick()" [disabled]="!formDataForm.valid">Submit</button>
+  </div>
+  

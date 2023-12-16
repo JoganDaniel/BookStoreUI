@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookService } from 'src/app/Services/BookService/book-service.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-viewbook',
@@ -13,7 +14,7 @@ export class ViewbookComponent implements OnInit {
   stars: boolean[] = Array(5).fill(false);
   rating:any
   feedback:any = []
-  constructor(private route: ActivatedRoute,private bookService:BookService)
+  constructor(private route: ActivatedRoute,private bookService:BookService,  private snackBar: MatSnackBar    )
   {
 
   }
@@ -71,6 +72,9 @@ export class ViewbookComponent implements OnInit {
     console.log(bookid);
     this.bookService.addWishlist(bookid).subscribe((response:any) => {
       console.log(response);
+      this.snackBar.open('Added to wishlist Successfully', '', {
+        duration: 2000,
+      });
     }) 
   
   }
@@ -84,6 +88,9 @@ export class ViewbookComponent implements OnInit {
     console.log(bookid);
     this.bookService.addCart(reqdata).subscribe((response:any) => {
       console.log(response);
+      this.snackBar.open('Added to cart Successfully', '', {
+        duration: 2000,
+      });
     }) 
   
   }

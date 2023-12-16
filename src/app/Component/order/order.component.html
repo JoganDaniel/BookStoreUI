@@ -1,13 +1,31 @@
-<div class="content">
-    <div class="wishlistdiv">
-        <h3 class="wishlist">My Order</h3>
-    </div>
-    <div class="list" *ngFor="let book of bookListarray">
-        <img src="{{book.book.image}}" alt="book" class="image">
-        <div class="bookdetails">
-            <div class="name">{{book.book.bookname}}</div>
-            <div class="author">by {{book.book.bookAuthor}}</div>
-            <div class="price">Rs.{{book.book.bookPrice}} <s class="author">{{book.book.bookPrice+500}}</s></div>
-        </div>
-    </div>
+<div class="container">
+    <!-- <h2 style="margin: 20px; font-weight: 600;">Order Placed Successfully</h2>
+    <img src="https://img.freepik.com/free-vector/order-confirmed-concept-illustration_114360-1486.jpg?w=2000"
+        alt="orderok" class="image">
+    <button mat-raised-button color="primary" style="width: 30%; background-color:#A03037;margin: 20px;"
+        (click)="clicked()">Continue Shopping</button> -->
+    <img src="https://img.freepik.com/free-vector/order-confirmed-concept-illustration_114360-1486.jpg?w=2000" class="image">
+    <p class="para">The order id is 7.
+        Save the order id for further communication...</p>
+    <table class="table">
+        <thead class="thead">
+            <tr>
+                <th>Email Us</th>
+                <th>Contact Us</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            <tr>
+                <td>admin@bookstore.com</td>
+                <td>+91 1234567890</td>
+                <td>Smartworks, Kochar Globe, South Phase, Ambedkar Nagar, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="continue" mat-raised-button color="primary"
+        style="width: 30%; background-color:#A03037;margin: 20px;" (click)="clicked()">Continue Shopping</button>
+</div>
+<div>
+
 </div>
